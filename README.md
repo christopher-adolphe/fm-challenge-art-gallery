@@ -29,9 +29,6 @@ Users should be able to:
 #### Home page
 ![Preview for the Art gallery home page](./preview.jpg)
 
-#### Location page
-![Preview for the Art gallery location page](./preview.jpg)
-
 ### Links
 
 - Solution URL: [Art gallery website](https://www.frontendmentor.io/solutions/officelite-website-html-css-js-H1fRcvFz9)
