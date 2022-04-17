@@ -1,0 +1,11 @@
+/*
+This file is used to contain all layout imports to apply styles to elements that compose the layout.
+*/
+
+// Import Layouts files
+@forward 'page';
+@forward 'container';
+@forward 'grid';
+@forward 'header';
+@forward 'navigation';
+@forward 'footer';

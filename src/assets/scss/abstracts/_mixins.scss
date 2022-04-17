@@ -1,0 +1,17 @@
+@use './breakpoints' as *;
+
+@mixin media-breakpoint($breakpointKey) {
+  @if map-has-key($breakpoints, $breakpointKey) {
+    $breakpointValue: map-get($breakpoints, $breakpointKey);
+
+    @media (min-width: $breakpointValue) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: $breakpointKey) {
+      @content;
+    }
+  }
+}

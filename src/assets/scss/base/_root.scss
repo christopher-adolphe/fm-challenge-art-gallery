@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+
+:root {
+  @each $color, $shade in $colors {
+    @each $key, $value in $shade {
+      --#{"" + $color}-#{$key}: #{$value};
+    }
+  }
+
+  @each $font, $value in $fonts {
+    --font-family-primary-#{$font}: #{$value};
+  }
+
+  @each $zindex, $value in $zindexes {
+    --zindex-#{$zindex}: #{$value};
+  }
+
+  @each $shadow, $value in $shadows {
+    --shadow-#{$shadow}: #{$value};
+  }
+}

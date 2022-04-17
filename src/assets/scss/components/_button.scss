@@ -1,0 +1,56 @@
+@use '../abstracts/' as *;
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: toRem(14px) toRem(40px);
+  background-color: var(--neutral-color-2);
+  border-radius: toRem(28px);
+  font-family: var(--font-family-primary-bold);
+  font-size: toRem(16px);
+  line-height: 1.75;
+  transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
+  cursor: pointer;
+
+  &--primary {
+    background-color: var(--blue-color-1);
+    color: var(--neutral-color-2);
+    transition: background-color 0.75s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: var(--blue-color-2);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--blue-color-2);
+    color: var(--neutral-color-2);
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: var(--blue-color-1);
+      color: var(--blue-color-2);
+    }
+  }
+
+  &--tertiary {
+    background-color: var(--neutral-color-4);
+    color: var(--dark-color-1);
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: var(--neutral-color-5);
+      color: var(--neutral-color-1);
+    }
+  }
+
+  &--shadow {
+    box-shadow: var(--shadow-color-5);
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+  }
+}

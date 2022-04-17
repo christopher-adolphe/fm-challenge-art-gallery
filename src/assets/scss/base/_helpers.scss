@@ -1,0 +1,164 @@
+@use '../abstracts/' as *;
+
+//------------------------------------------------------------------------------
+// Flex Box
+//------------------------------------------------------------------------------
+.d-flex {
+  display: flex;
+
+  &--col {
+    flex-direction: column;
+  }
+
+  &--justify-content {
+    &-start {
+      justify-content: flex-start;
+    }
+
+    &-center {
+      justify-content: center;
+    }
+
+    &-end {
+      justify-content: flex-end;
+    }
+
+    &-around {
+      justify-content: space-around;
+    }
+
+    &-between {
+      justify-content: space-between;
+    }
+
+    &-evenly {
+      justify-content: space-evenly;
+    }
+
+    &-stretch {
+      justify-content: stretch;
+    }
+  }
+
+  &--align-items {
+    &-start {
+      align-items: flex-start;
+    }
+    
+    &-center {
+      align-items: center;
+    }
+
+    &-end {
+      align-items: flex-end;
+    }
+
+    &-baseline {
+      align-items: baseline;
+    }
+
+    &-stretch {
+      align-items: stretch;
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// Text Alignment
+//------------------------------------------------------------------------------
+.text {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Text Colors
+//------------------------------------------------------------------------------
+@each $color, $shade in $colors {
+  @each $key, $value in $shade {
+    .text-#{"" + $color}-#{$key} {
+      color: #{$value} !important;
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// Background Colors
+//------------------------------------------------------------------------------
+@each $color, $shade in $colors {
+  @each $key, $value in $shade {
+    .bg-#{"" + $color}-#{$key} {
+      background-color: #{$value} !important;
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// Font Family
+//------------------------------------------------------------------------------
+@each $font, $value in $fonts {
+  .text-primary-#{$font} {
+    font-family: #{$value}, sans-serif !important;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Margin Vertical Spacing
+//------------------------------------------------------------------------------
+@each $spacing, $value in $spacings {
+  .mt-#{$spacing} {
+    margin-top: toRem($spacer * $value) !important;;
+  }
+
+  .mb-#{$spacing} {
+    margin-bottom: toRem($spacer * $value) !important;;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Margin Horizontal Spacing
+//------------------------------------------------------------------------------
+@each $spacing, $value in $spacings {
+  .ml-#{$spacing} {
+    margin-left: toRem($spacer * $value) !important;;
+  }
+
+  .mr-#{$spacing} {
+    margin-right: toRem($spacer * $value) !important;;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Padding Vertical Spacing
+//------------------------------------------------------------------------------
+@each $spacing, $value in $spacings {
+  .pt-#{$spacing} {
+    padding-top: toRem($spacer * $value) !important;;
+  }
+
+  .pb-#{$spacing} {
+    padding-bottom: toRem($spacer * $value) !important;;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Padding Horizontal Spacing
+//------------------------------------------------------------------------------
+@each $spacing, $value in $spacings {
+  .pl-#{$spacing} {
+    padding-left: toRem($spacer * $value) !important;;
+  }
+
+  .pr-#{$spacing} {
+    padding-right: toRem($spacer * $value) !important;;
+  }
+}

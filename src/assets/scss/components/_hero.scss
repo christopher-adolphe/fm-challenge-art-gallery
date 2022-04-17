@@ -1,0 +1,45 @@
+@use '../abstracts/' as *;
+
+.hero {
+  &__content,
+  &__illustration {
+    height: 100%;
+  }
+
+  &__illustration {
+    img {
+      width: toRem(340px);
+    }
+
+    .swiper {
+      width: toRem(600px);
+      height: toRem(400px);
+
+      &-slide {
+        text-align: center;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: toRem(48px);
+    color: var(--dark-color-4);
+    font-size: toRem(72px);
+
+    span {
+      color: var(--blue-color-1);
+    }
+  }
+
+  &__tag-line {
+    font-family: var(--font-family-primary-regular);
+    font-size: toRem(24px);
+    line-height: 1.2;
+  }
+
+  @include media-breakpoint(xl) {
+    &__content {
+      padding-right: toRem(120px);
+    }
+  }
+}

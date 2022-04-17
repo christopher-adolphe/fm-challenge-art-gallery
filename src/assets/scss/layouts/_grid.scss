@@ -1,0 +1,57 @@
+@use '../abstracts/' as *;
+
+.grid,
+.grid-cols {
+  --grid-gap: #{toRem($grid-gap)};
+  display: grid;
+  grid-gap: var(--grid-gap, 0);
+
+  &--no-gutter {
+    grid-gap: 0;
+  }
+}
+
+.grid {
+  --col-min-width: 265px;
+  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
+
+  &-cols {
+    --grid-cols: #{$grid-cols};
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+    > * {
+      grid-column-end: span var(--grid-cols);
+    }
+  }
+
+  &__item {
+    min-height: toRem(50px);
+
+    @for $i from 1 through $grid-cols {
+      &--span-#{$i} {
+        grid-column-end: span #{$i};
+      }
+
+      &--start-#{$i} {
+        grid-column-start: #{$i};
+      }
+
+      &--end-#{$i+1} {
+        grid-column-end: #{$i+1};
+      }
+    }
+  }
+
+  @include media-breakpoint(sm) {
+    --col-min-width: 240px;
+  }
+
+  @include media-breakpoint(lg) {
+    --col-min-width: 300px;
+  }
+
+  @include media-breakpoint(xl) {
+    --grid-gap: #{toRem($grid-gap-xl)};
+    --col-min-width: 310px;
+  }
+}

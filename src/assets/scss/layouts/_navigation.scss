@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.navigation {
+  &__brand {
+    color: var(--neutral-color-1);
+    font-family: var(--font-family-primary-bold);
+    font-size: toRem(32px);
+  }
+}
