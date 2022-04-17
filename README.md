@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Art gallery website](https://www.frontendmentor.io/solutions/officelite-website-html-css-js-H1fRcvFz9)
-- Live Site URL: [fm-artgallery.netlify.app](https://fm-artgallery.netlify.app/)
+- Solution URL: [Art gallery website](https://www.frontendmentor.io/challenges/art-gallery-website-yVdrZlxyA)
+- Live Site URL: [fm-modern-art-gallery.netlify.app](https://fm-modern-art-gallery.netlify.app/)
 
 ## My process
 
