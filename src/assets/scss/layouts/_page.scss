@@ -18,22 +18,7 @@
   }
 
   &__section {
-    padding: toRem(96px) 0;
-
-    &--bg-light-1 {
-      background-color: var(--neutral-color-2);
-    }
-
-    &--bg-light-2 {
-      background-color: var(--neutral-color-3);
-    }
-
-    &--bg-light-1,
-    &--bg-light-2 {
-      p {
-        color: var(--dark-color-4);
-      }
-    }
+    padding: toRem(60px) 0;
   }
 
   &__footer {

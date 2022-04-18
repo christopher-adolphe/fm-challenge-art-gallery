@@ -1,0 +1,39 @@
+@use '../abstracts/' as *;
+
+.page--design-system {
+  .page__section {
+    &-intro {
+      padding: toRem(50px) 0;
+      background-color: var(--dark-color-2);
+
+      .grid__item:nth-child(2) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      h1 {
+        margin-bottom: 0;
+        font-family: var(--font-family-primary-light);
+        font-size: toRem(18px);
+        line-height: 1.6;
+        text-transform: none;
+        color: var(--neutral-color-1);
+      }
+    }
+
+    &-colors {
+      padding-top: toRem(90px);
+    }
+  }
+
+  @include media-breakpoint(sm) {
+    .page__section {
+      &-intro {
+        .grid__item:nth-child(2) {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}

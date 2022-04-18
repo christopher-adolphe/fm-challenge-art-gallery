@@ -1,17 +1,51 @@
 @use '../abstracts/' as *;
 
 .btn {
+  --btn-height: #{toRem(72px)};
+
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: toRem(14px) toRem(40px);
-  background-color: var(--neutral-color-2);
-  border-radius: toRem(28px);
-  font-family: var(--font-family-primary-bold);
-  font-size: toRem(16px);
+  height: var(--btn-height);
+  background-color: var(--neutral-color-4);
+  font-family: var(--font-family-primary-black);
+  font-size: toRem(20px);
   line-height: 1.75;
-  transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
+  text-transform: uppercase;
+  transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
   cursor: pointer;
+
+  &__text {
+    padding: toRem(24px) toRem(32px);
+    line-height: 1;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: toRem(56px);
+    height: var(--btn-height);
+    background-color: var(--dark-color-1);
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    background-color: var(--neutral-color-5);
+  }
+
+  &--reverse {
+    .btn {
+      &__text {
+        order: 2;
+      }
+  
+      &__icon {
+        order: 1;
+      }
+    }
+  }
 
   &--primary {
     background-color: var(--blue-color-1);
@@ -47,10 +81,5 @@
       background-color: var(--neutral-color-5);
       color: var(--neutral-color-1);
     }
-  }
-
-  &--shadow {
-    box-shadow: var(--shadow-color-5);
-    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
   }
 }
