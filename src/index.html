@@ -8,66 +8,37 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <div class="page">
-    <header class="page__header"></header>
+  <div id="page-home" class="page page--home">
+    <!-- <header class="page__header"></header> -->
 
-    <main class="page__content page__section--bg-light-1">
-      <section class="page__section">
-        <div class="container">
-          <div class="grid-cols">
-            <div class="grid__item grid__item--span-6">
-              <div class="hero__content d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-start">
-                <h1 class="hero__title">Ready, Get Set, <span>Code</span></h1>
-  
-                <p class="hero__tag-line">A great boilerplate to quickly start any front-end development project using TypeScript, Sass and webpack 5.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="page__section page__section--bg-light-2">
+    <main class="page__content">
+      <section class="page__section page__section-hero pt-none pb-none">
         <div class="container">
           <div class="grid">
             <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-typescript.svg" alt="TypeScript" />
-                  </span>
+              <div class="hero">
+                <div class="hero__illustration">
+                  <picture>
+                    <source media="(max-width: 576px)" srcset="assets/images/home/mobile/image-hero.jpg">
+                    <source media="(max-width: 992px)" srcset="assets/images/home/tablet/image-hero.jpg">
+                    <source media="(max-width: 1200px)" srcset="assets/images/home/desktop/image-hero.jpg">
+                    <img src="assets/images/home/desktop/image-hero.jpg" alt="Modern Art Gallery" />
+                  </picture>
+                </div>
 
-                  TypeScript
-                </h3>
+                <div class="hero__content d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-start">
+                  <h1 class="hero__title">Modern Art Gallery</h1>
+    
+                  <p class="hero__tag-line">The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
   
-                <p>TypeScript adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor. It understands JavaScript and uses type inference to give you great tooling without additional code.</p>
-              </div>
-            </div>
-
-            <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-sass.svg" alt="Sass" />
-                  </span>
-
-                  Sass
-                </h3>
-  
-                <p>Sass is the most mature, stable, and powerful preprocessor. Sass has features that don't exist in CSS yet like nesting, mixins, inheritance, and other nifty goodies that help you write robust, maintainable CSS.</p>
-              </div>
-            </div>
-
-            <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-webpack.svg" alt="Webpack" />
-                  </span>
-
-                  webpack
-                </h3>
-  
-                <p>Webpack is a static module bundler for modern JavaScript applications. It combines every module your project needs into one or more bundles, which are static assets to serve your content from.</p>
+                  <a href="/location.html" class="btn btn--primary">
+                    <span class="btn__text">Our Location</span>
+                    
+                    <span class="btn__icon">
+                      <span class="btn__arrow"></span>
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
