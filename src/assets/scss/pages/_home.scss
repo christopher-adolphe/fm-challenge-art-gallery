@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+.page--home {
+  @include media-breakpoint(xl) {
+    .page__section {
+      &-hero {
+        background: linear-gradient(to right, var(--dark-color-2) 50%, var(--neutral-color-1) 50%);
+      }
+    }
+  }
+}

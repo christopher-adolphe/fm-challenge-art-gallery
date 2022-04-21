@@ -1,30 +1,20 @@
 @use '../abstracts/' as *;
 
 .hero {
-  // &__content,
-  // &__illustration {
-  //   height: 100%;
-  // }
+  position: relative;
 
   &__illustration {
     margin: 0 toRem(-20px) toRem(32px) toRem(-20px);
+
+    img {
+      width: 100%;
+    }
   }
 
   &__title {
-    // margin-bottom: toRem(48px);
-    // color: var(--dark-color-4);
-    // font-size: toRem(72px);
-
-    // span {
-    //   color: var(--blue-color-1);
-    // }
-
     width: toRem(340px);
     height: toRem(110px);
     margin-bottom: toRem(32px);
-    // width: toRem(445px);
-    // height: toRem(165px);
-    // background: linear-gradient(to right, var(--neutral-color-1) 50%, var(--dark-color-2) 50%);
     background: var(--dark-color-2);
     mask-image: url('assets/images/shared/logo.svg');
     mask-position: top left;
@@ -43,9 +33,70 @@
     }
   }
 
-  @include media-breakpoint(xl) {
+  @include media-breakpoint(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__illustration {
+      flex-shrink: 0;
+      margin: unset;
+    }
+
+    picture {
+      transform-origin: top left;
+      transform: translateX(toRem(-50px));
+    }
+
     &__content {
-      padding-right: toRem(120px);
+      transform-origin: top left;
+      transform: translateX(toRem(-95px));
+    }
+
+    &__title {
+      width: toRem(340px);
+      height: toRem(130px);
+      margin-bottom: toRem(48px);
+    }
+  }
+
+  @include media-breakpoint(800px) {
+    picture {
+      transform: translateX(toRem(-80px));
+    }
+
+    &__content {
+      transform: translateX(toRem(-150px));
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    picture {
+      max-width: calc(100% - 20px);
+      transform: unset;
+    }
+
+    &__content {
+      width: 100%;
+      min-width: toRem(350px);
+      transform: unset;
+      margin-top: toRem(-190px);
+      margin-left: toRem(-85px);
+    }
+
+    &__title {
+      position: absolute;
+      left: 0;
+      width: toRem(445px);
+      height: toRem(165px);
+      background: linear-gradient(to right, var(--neutral-color-1) 63%, var(--dark-color-2) 37%);
+      transform-origin: center;
+      transform: translateX(-63.5%);
+    }
+
+    &__tag-line {
+      font-size: toRem(22px);
+      line-height: 1.5;
     }
   }
 }
