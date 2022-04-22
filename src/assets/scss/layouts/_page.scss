@@ -8,26 +8,11 @@
   width: 100%;
   height: 100vh;
 
-  &__header {
-    padding: toRem(24px) 0;
-    background-color: var(--dark-color-5);
-  }
-
   &__content {
     flex-grow: 1;
   }
 
   &__section {
     padding: toRem(60px) 0;
-  }
-
-  &__footer {
-    padding: toRem(20px) 0;
-    background-color: var(--dark-color-5);
-
-    p {
-      color: var(--neutral-color-1);
-      font-size: toRem(14px);
-    }
   }
 }

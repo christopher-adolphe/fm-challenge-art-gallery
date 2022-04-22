@@ -25,8 +25,6 @@
   }
 
   &__item {
-    min-height: toRem(50px);
-
     @for $i from 1 through $grid-cols {
       &--span-#{$i} {
         grid-column-end: span #{$i};
