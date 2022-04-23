@@ -9,6 +9,10 @@
   &--no-gutter {
     grid-gap: 0;
   }
+
+  @include media-breakpoint(xl) {
+    --grid-gap: #{toRem($grid-gap-xl)};
+  }
 }
 
 .grid {
@@ -37,6 +41,10 @@
       &--end-#{$i+1} {
         grid-column-end: #{$i+1};
       }
+
+      &--order-#{$i} {
+        order: #{$i};
+      }
     }
   }
 
@@ -56,6 +64,10 @@
         &--end-sm-#{$i+1} {
           grid-column-end: #{$i+1};
         }
+
+        &--order-sm-#{$i} {
+          order: #{$i};
+        }
       }
     }
   }
@@ -73,6 +85,10 @@
   
         &--end-md-#{$i+1} {
           grid-column-end: #{$i+1};
+        }
+
+        &--order-md-#{$i} {
+          order: #{$i};
         }
       }
     }
@@ -94,12 +110,15 @@
         &--end-lg-#{$i+1} {
           grid-column-end: #{$i+1};
         }
+
+        &--order-lg-#{$i} {
+          order: #{$i};
+        }
       }
     }
   }
 
   @include media-breakpoint(xl) {
-    --grid-gap: #{toRem($grid-gap-xl)};
     --col-min-width: 310px;
 
     &__item {
@@ -114,6 +133,10 @@
   
         &--end-xl-#{$i+1} {
           grid-column-end: #{$i+1};
+        }
+
+        &--order-xl-#{$i} {
+          order: #{$i};
         }
       }
     }

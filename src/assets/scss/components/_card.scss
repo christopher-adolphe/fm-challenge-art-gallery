@@ -1,0 +1,80 @@
+@use '../abstracts/' as *;
+
+.card {
+  --h-spacing: #{toRem(24px)};
+  --v-spacing: #{toRem(48px)};
+  --content-spacing: 0;
+  --text-font-size: #{toRem(18px)};
+  --text-line-height: 1.6;
+  --title-margin-bottom: #{toRem(24px)};
+  --title-font-size: #{toRem(36px)};
+  --title-line-height: 1;
+
+  height: 100%;
+
+  &__content {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--title-margin-bottom);
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+  }
+
+  &__text {
+    color: var(--dark-color-1);
+    font-size: var(--text-font-size);
+    line-height: var(--text-line-height);
+  }
+
+  &--space-top-right {
+    .card {
+      &__content {
+        padding: var(--content-spacing);
+      }
+    }
+  }
+
+  &--bg-dark {
+    background-color: var(--dark-color-2);
+
+    .card {
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+        padding: var(--v-spacing) var(--h-spacing);
+      }
+
+      &__title,
+      &__text {
+        color: var(--neutral-color-1);
+      }
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --h-spacing: #{toRem(28px)};
+    --v-spacing: #{toRem(84px)};
+    --content-spacing: #{toRem(36px) toRem(40px) 0 0};
+  }
+
+  @include media-breakpoint(xl) {
+    --h-spacing: #{toRem(48px)};
+    --v-spacing: #{toRem(64px)};
+    --content-spacing: #{toRem(60px) toRem(60px) 0 0};
+    --text-font-size: #{toRem(22px)};
+    --text-line-height: 1.5;
+    --title-margin-bottom: #{toRem(32px)};
+  }
+
+  @include media-breakpoint(xxl) {
+    --content-spacing: #{toRem(60px) toRem(165px) 0 0};
+    --title-font-size: #{toRem(60px)};
+  }
+}
