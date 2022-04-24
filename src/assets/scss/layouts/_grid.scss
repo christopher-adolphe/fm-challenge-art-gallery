@@ -9,6 +9,10 @@
   &--no-gutter {
     grid-gap: 0;
   }
+
+  @include media-breakpoint(xl) {
+    --grid-gap: #{toRem($grid-gap-xl)};
+  }
 }
 
 .grid {
@@ -25,8 +29,6 @@
   }
 
   &__item {
-    min-height: toRem(50px);
-
     @for $i from 1 through $grid-cols {
       &--span-#{$i} {
         grid-column-end: span #{$i};
@@ -39,19 +41,104 @@
       &--end-#{$i+1} {
         grid-column-end: #{$i+1};
       }
+
+      &--order-#{$i} {
+        order: #{$i};
+      }
     }
   }
 
   @include media-breakpoint(sm) {
     --col-min-width: 240px;
+
+    &__item {
+      @for $i from 1 through $grid-cols {
+        &--span-sm-#{$i} {
+          grid-column-end: span #{$i};
+        }
+  
+        &--start-sm-#{$i} {
+          grid-column-start: #{$i};
+        }
+  
+        &--end-sm-#{$i+1} {
+          grid-column-end: #{$i+1};
+        }
+
+        &--order-sm-#{$i} {
+          order: #{$i};
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(md) {
+    &__item {
+      @for $i from 1 through $grid-cols {
+        &--span-md-#{$i} {
+          grid-column-end: span #{$i};
+        }
+  
+        &--start-md-#{$i} {
+          grid-column-start: #{$i};
+        }
+  
+        &--end-md-#{$i+1} {
+          grid-column-end: #{$i+1};
+        }
+
+        &--order-md-#{$i} {
+          order: #{$i};
+        }
+      }
+    }
   }
 
   @include media-breakpoint(lg) {
     --col-min-width: 300px;
+
+    &__item {
+      @for $i from 1 through $grid-cols {
+        &--span-sm-#{$i} {
+          grid-column-end: span #{$i};
+        }
+  
+        &--start-lg-#{$i} {
+          grid-column-start: #{$i};
+        }
+  
+        &--end-lg-#{$i+1} {
+          grid-column-end: #{$i+1};
+        }
+
+        &--order-lg-#{$i} {
+          order: #{$i};
+        }
+      }
+    }
   }
 
   @include media-breakpoint(xl) {
-    --grid-gap: #{toRem($grid-gap-xl)};
     --col-min-width: 310px;
+
+    &__item {
+      @for $i from 1 through $grid-cols {
+        &--span-xl-#{$i} {
+          grid-column-end: span #{$i};
+        }
+  
+        &--start-xl-#{$i} {
+          grid-column-start: #{$i};
+        }
+  
+        &--end-xl-#{$i+1} {
+          grid-column-end: #{$i+1};
+        }
+
+        &--order-xl-#{$i} {
+          order: #{$i};
+        }
+      }
+    }
   }
 }

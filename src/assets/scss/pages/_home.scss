@@ -1,0 +1,77 @@
+@use '../abstracts/' as *;
+
+.page--home {
+  .page__section {
+    --v-spacing: #{toRem(120px)};
+    --row-height-1: auto;
+    --row-height-2: auto;
+    --row-height-3: auto;
+
+    &-about {
+      padding: var(--v-spacing) 0;
+
+      .card {
+        picture {
+          width: 100%;
+        }
+        
+        &--bg-dark {
+          min-height: toRem(295px);
+        }
+      }
+    }
+
+    .grid-rows {
+      grid-template-rows: var(--row-height-1) var(--row-height-2) var(--row-height-3);
+    }
+
+    @include media-breakpoint(md) {
+      --row-height-1: #{toRem(390px)};
+      --row-height-2: #{toRem(304px)};
+      --row-height-3: #{toRem(379px)};
+    }
+
+    @include media-breakpoint(800px) {
+      --row-height-1: #{toRem(275px)};
+      --row-height-2: #{toRem(191px)};
+      --row-height-3: #{toRem(300px)};
+
+      .grid__item {
+        &:nth-child(1) {
+          img {
+            min-height: toRem(275px);
+          }
+        }
+
+        &:nth-child(3) {
+          img {
+            min-height: toRem(511px);
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint(lg) {
+      --row-height-1: #{toRem(333px)};
+      --row-height-2: #{toRem(261px)};
+      --row-height-3: #{toRem(318px)};
+    }
+    
+    @include media-breakpoint(xl) {
+      --v-spacing: #{toRem(180px)};
+      --row-height-1: #{toRem(360px)};
+      --row-height-2: #{toRem(281px)};
+      --row-height-3: #{toRem(337px)};
+
+      &-hero {
+        background: linear-gradient(to right, var(--dark-color-2) 50%, var(--neutral-color-1) 50%);
+      }
+    }
+
+    @include media-breakpoint(xxl) {
+      --row-height-1: #{toRem(463px)};
+      --row-height-2: #{toRem(363px)};
+      --row-height-3: #{toRem(440px)};
+    }
+  }
+}
