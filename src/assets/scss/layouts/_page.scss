@@ -1,6 +1,8 @@
 @use '../abstracts/' as *;
 
 .page {
+  --map-height: #{toRem(550px)};
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,5 +39,14 @@
 
   &__section {
     padding: toRem(60px) 0;
+  }
+
+  &__map {
+    width: 100%;
+    height: var(--map-height);
+  }
+
+  @include media-breakpoint(md) {
+    --map-height: #{toRem(600px)};
   }
 }

@@ -8,6 +8,7 @@
   --text-line-height: 1.6;
   --title-margin-bottom: #{toRem(24px)};
   --title-font-size: #{toRem(36px)};
+  --title-font-size-sm: #{toRem(32px)};
   --title-line-height: 1;
 
   height: 100%;
@@ -27,6 +28,10 @@
     margin-bottom: var(--title-margin-bottom);
     font-size: var(--title-font-size);
     line-height: var(--title-line-height);
+
+    &--sm {
+      font-size: var(--title-font-size-sm);
+    }
   }
 
   &__text {
@@ -35,7 +40,7 @@
     line-height: var(--text-line-height);
   }
 
-  &--space-top-right {
+  &--space-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,6 +85,7 @@
     --content-spacing: #{toRem(60px)};
     --text-font-size: #{toRem(22px)};
     --text-line-height: 1.5;
+    --title-font-size-sm: #{toRem(36px)};
     --title-margin-bottom: #{toRem(32px)};
   }
 
