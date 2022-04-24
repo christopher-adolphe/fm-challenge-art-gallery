@@ -157,6 +157,6 @@ ul {
   padding: 0;
 }
 
-.img-fluid {
-  height: auto;
+:focus {
+  outline: var(--gold-color-1) dotted 3px;
 }

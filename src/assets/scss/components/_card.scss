@@ -13,6 +13,11 @@
   height: 100%;
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
     img {
       width: 100%;
     }
@@ -31,9 +36,14 @@
   }
 
   &--space-top-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
     .card {
       &__content {
-        padding: var(--content-spacing);
+        padding-right: var(--content-spacing);
       }
     }
   }
@@ -43,10 +53,6 @@
 
     .card {
       &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
         height: 100%;
         padding: var(--v-spacing) var(--h-spacing);
       }
@@ -64,17 +70,21 @@
     --content-spacing: #{toRem(36px) toRem(40px) 0 0};
   }
 
+  @include media-breakpoint(800px) {
+    --v-spacing: #{toRem(44px)};
+  }
+
   @include media-breakpoint(xl) {
     --h-spacing: #{toRem(48px)};
     --v-spacing: #{toRem(64px)};
-    --content-spacing: #{toRem(60px) toRem(60px) 0 0};
+    --content-spacing: #{toRem(60px)};
     --text-font-size: #{toRem(22px)};
     --text-line-height: 1.5;
     --title-margin-bottom: #{toRem(32px)};
   }
 
   @include media-breakpoint(xxl) {
-    --content-spacing: #{toRem(60px) toRem(165px) 0 0};
+    --content-spacing: #{toRem(165px)};
     --title-font-size: #{toRem(60px)};
   }
 }

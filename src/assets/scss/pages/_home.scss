@@ -9,6 +9,16 @@
 
     &-about {
       padding: var(--v-spacing) 0;
+
+      .card {
+        picture {
+          width: 100%;
+        }
+        
+        &--bg-dark {
+          min-height: toRem(295px);
+        }
+      }
     }
 
     .grid-rows {
@@ -19,6 +29,26 @@
       --row-height-1: #{toRem(390px)};
       --row-height-2: #{toRem(304px)};
       --row-height-3: #{toRem(379px)};
+    }
+
+    @include media-breakpoint(800px) {
+      --row-height-1: #{toRem(275px)};
+      --row-height-2: #{toRem(191px)};
+      --row-height-3: #{toRem(300px)};
+
+      .grid__item {
+        &:nth-child(1) {
+          img {
+            min-height: toRem(275px);
+          }
+        }
+
+        &:nth-child(3) {
+          img {
+            min-height: toRem(511px);
+          }
+        }
+      }
     }
 
     @include media-breakpoint(lg) {
