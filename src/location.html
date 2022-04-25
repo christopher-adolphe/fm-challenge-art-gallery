@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon">
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
 </head>
 <body>
   <div id="page-location" class="page page--location">
@@ -23,23 +29,23 @@
           </a>
         </div>
 
-        <div class="page__map bg-neutral-color-5"></div>
+        <div id="map" class="page__map"></div>
       </section>
 
       <section id="main" class="page__section page__section-location">
         <div class="container">
           <div class="grid-cols">
             <div class="grid__item grid__item--span-md-4 grid__item--span-xl-3">
-              <h1 class="h2">Our Location</h1>
+              <h1 class="h2 text-neutral-color-1">Our Location</h1>
             </div>
   
             <div class="grid__item grid__item--span-md-7 grid__item--start-md-6 grid__item--span-xl-6 grid__item--start-xl-7">
               <div class="card">
                 <div class="card__content">
-                  <h2 class="card__title card__title--sm">99 King Street</h2>
+                  <h2 class="card__title card__title--sm text-gold-color-1">99 King Street</h2>
   
-                  <p class="card__text">Newport<br/>RI 02840<br/>United States of America</p>
-                  <p class="card__text">Our newly opened gallery is located near the Edward King House on 99 King Street, the Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm.</p>
+                  <p class="card__text text-neutral-color-1">Newport<br/>RI 02840<br/>United States of America</p>
+                  <p class="card__text text-neutral-color-1">Our newly opened gallery is located near the Edward King House on 99 King Street, the Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm.</p>
                 </div>
               </div>
             </div>
