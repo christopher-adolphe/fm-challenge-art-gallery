@@ -1,6 +1,8 @@
 @use '../abstracts/' as *;
 
 .page {
+  --map-height: #{toRem(550px)};
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,8 +12,8 @@
 
   &__skip-link {
     position: absolute;
-    top: toRem(4px);
-    left: toRem(4px);
+    top: toRem(20px);
+    left: toRem(20px);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -22,12 +24,12 @@
     background-color: var(--dark-color-2);
     color: var(--neutral-color-1);
     z-index: var(--zindex-sticky);
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-    transition: opacity 0.75s ease-in-out;
+    transform: translateX(-200%);
+    transition: transform 0.25s ease-in-out, opacity 0.75s ease-in-out;
 
     &:focus {
       opacity: 1;
-      clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
+      transform: translateX(0);
     }
   }
 
@@ -37,5 +39,14 @@
 
   &__section {
     padding: toRem(60px) 0;
+  }
+
+  &__map {
+    width: 100%;
+    height: var(--map-height);
+  }
+
+  @include media-breakpoint(md) {
+    --map-height: #{toRem(600px)};
   }
 }

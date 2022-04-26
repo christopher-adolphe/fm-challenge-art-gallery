@@ -6,18 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon">
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
 </head>
 <body>
-  <div class="page">
-    <header class="page__header"></header>
-
+  <div id="page-location" class="page page--location">
+    <a href="#main" class="page__skip-link" aria-label="Skip to main content">Skip to main content</a>
+    
     <main class="page__content">
-      <div class="container">
-        <h1 class="mt-xxxl">Location</h1>
-      </div>
+      <section class="page__section page__section-map">
+        <div class="container page__section-cta">
+          <a href="/" class="btn btn--primary btn--reverse">
+            <span class="btn__text">Back to Home</span>
+            
+            <span class="btn__icon">
+              <span class="btn__arrow"></span>
+            </span>
+          </a>
+        </div>
+
+        <div id="map" class="page__map"></div>
+      </section>
+
+      <section id="main" class="page__section page__section-location">
+        <div class="container">
+          <div class="grid-cols">
+            <div class="grid__item grid__item--span-md-4 grid__item--span-xl-3">
+              <h1 class="h2 text-neutral-color-1">Our Location</h1>
+            </div>
+  
+            <div class="grid__item grid__item--span-md-7 grid__item--start-md-6 grid__item--span-xl-6 grid__item--start-xl-7">
+              <div class="card">
+                <div class="card__content">
+                  <h2 class="card__title card__title--sm text-gold-color-1">99 King Street</h2>
+  
+                  <p class="card__text text-neutral-color-1">Newport<br/>RI 02840<br/>United States of America</p>
+                  <p class="card__text text-neutral-color-1">Our newly opened gallery is located near the Edward King House on 99 King Street, the Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="page__footer"></footer>
+    <footer class="page__footer footer"></footer>
   </div>
 </body>
 </html>

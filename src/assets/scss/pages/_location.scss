@@ -1,0 +1,69 @@
+@use '../abstracts/' as *;
+
+.page--location {
+  --top-spacing: #{toRem(48px)};
+  --bottom-spacing: #{toRem(56px)};
+
+  .page__section {
+    &-cta {
+      position: relative;
+
+      > .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: var(--zindex-sticky);
+      }
+    }
+    
+    &-map {
+      position: relative;
+      padding: 0;
+    }
+
+    &-location {
+      padding: var(--top-spacing) 0 var(--bottom-spacing) 0;
+      background-color: var(--dark-color-2);
+    }
+  }
+
+  .footer {
+    background-color: var(--gold-color-1);
+
+    &__brand,
+    &__social,
+    &__copyright {
+      path {
+        fill: var(--dark-color-2);
+      }
+    }
+
+    &__text,
+    &__copyright-text,
+    &__copyright a {
+      color: var(--dark-color-2);
+    }
+
+    :focus {
+      outline-color: var(--dark-color-2);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --top-spacing: #{toRem(88px)};
+    --bottom-spacing: #{toRem(80px)};
+
+    .page__section {
+      &-cta {
+        > .btn {
+          left: toRem(20px);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    --top-spacing: #{toRem(104px)};
+    --bottom-spacing: #{toRem(128px)};
+  }
+}

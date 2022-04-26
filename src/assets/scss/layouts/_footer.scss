@@ -85,26 +85,6 @@
     }
   }
 
-  &--bg-gold {
-    background-color: var(--gold-color-1);
-
-    .footer {
-      &__brand,
-      &__social,
-      &__copyright {
-        path {
-          fill: var(--dark-color-2);
-        }
-      }
-
-      &__text,
-      &__copyright-text,
-      &__copyright a {
-        color: var(--dark-color-2);
-      }
-    }
-  }
-
   @include media-breakpoint(md) {
     --vertical-spacing: #{toRem(56px)};
 
