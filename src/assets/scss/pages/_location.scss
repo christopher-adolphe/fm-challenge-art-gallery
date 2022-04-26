@@ -6,7 +6,14 @@
 
   .page__section {
     &-cta {
-      margin-bottom: toRem(-72px);
+      position: relative;
+
+      > .btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: var(--zindex-sticky);
+      }
     }
     
     &-map {
@@ -20,30 +27,39 @@
     }
   }
 
-
   .footer {
     background-color: var(--gold-color-1);
 
-    .footer {
-      &__brand,
-      &__social,
-      &__copyright {
-        path {
-          fill: var(--dark-color-2);
-        }
+    &__brand,
+    &__social,
+    &__copyright {
+      path {
+        fill: var(--dark-color-2);
       }
+    }
 
-      &__text,
-      &__copyright-text,
-      &__copyright a {
-        color: var(--dark-color-2);
-      }
+    &__text,
+    &__copyright-text,
+    &__copyright a {
+      color: var(--dark-color-2);
+    }
+
+    :focus {
+      outline-color: var(--dark-color-2);
     }
   }
 
   @include media-breakpoint(md) {
     --top-spacing: #{toRem(88px)};
     --bottom-spacing: #{toRem(80px)};
+
+    .page__section {
+      &-cta {
+        > .btn {
+          left: toRem(20px);
+        }
+      }
+    }
   }
 
   @include media-breakpoint(xl) {

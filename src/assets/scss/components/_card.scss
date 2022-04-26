@@ -4,10 +4,12 @@
   --h-spacing: #{toRem(24px)};
   --v-spacing: #{toRem(48px)};
   --content-spacing: 0;
+  --content-gap: #{toRem(20px)};
+  --content-min-height: #{toRem(295px)};
   --text-font-size: #{toRem(18px)};
   --text-line-height: 1.6;
   --title-margin-bottom: #{toRem(24px)};
-  --title-font-size: #{toRem(36px)};
+  --title-font-size: #{toRem(50px)};
   --title-font-size-sm: #{toRem(32px)};
   --title-line-height: 1;
 
@@ -21,6 +23,23 @@
 
     img {
       width: 100%;
+    }
+
+    &--bg-dark {
+      min-height: var(--content-min-height);
+      background-color: var(--dark-color-2);
+      padding: var(--v-spacing) var(--h-spacing);
+
+      .card {
+        &__title,
+        &__text {
+          color: var(--neutral-color-1);
+        }
+      }
+    }
+
+    + .card__content {
+      margin-top: var(--content-gap);
     }
   }
 
@@ -53,36 +72,26 @@
     }
   }
 
-  &--bg-dark {
-    background-color: var(--dark-color-2);
-
-    .card {
-      &__content {
-        height: 100%;
-        padding: var(--v-spacing) var(--h-spacing);
-      }
-
-      &__title,
-      &__text {
-        color: var(--neutral-color-1);
-      }
-    }
-  }
-
   @include media-breakpoint(md) {
     --h-spacing: #{toRem(28px)};
-    --v-spacing: #{toRem(84px)};
+    --v-spacing: #{toRem(69px)};
     --content-spacing: #{toRem(36px) toRem(40px) 0 0};
   }
 
   @include media-breakpoint(800px) {
-    --v-spacing: #{toRem(44px)};
+    --v-spacing: #{toRem(30px)};
+  }
+
+  @include media-breakpoint(lg) {
+    --content-min-height: #{toRem(318px)};
   }
 
   @include media-breakpoint(xl) {
     --h-spacing: #{toRem(48px)};
-    --v-spacing: #{toRem(64px)};
+    --v-spacing: #{toRem(52px)};
     --content-spacing: #{toRem(60px)};
+    --content-gap: #{toRem(30px)};
+    --content-min-height: #{toRem(336px)};
     --text-font-size: #{toRem(22px)};
     --text-line-height: 1.5;
     --title-font-size-sm: #{toRem(36px)};
@@ -91,6 +100,7 @@
 
   @include media-breakpoint(xxl) {
     --content-spacing: #{toRem(165px)};
+    --content-min-height: #{toRem(439px)};
     --title-font-size: #{toRem(60px)};
   }
 }
