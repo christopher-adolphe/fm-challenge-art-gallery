@@ -14,6 +14,10 @@
   --title-line-height: 1;
 
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: var(--content-gap);
 
   &__content {
     display: flex;
@@ -26,6 +30,7 @@
     }
 
     &--bg-dark {
+      flex-grow: 1;
       min-height: var(--content-min-height);
       background-color: var(--dark-color-2);
       padding: var(--v-spacing) var(--h-spacing);
@@ -36,10 +41,6 @@
           color: var(--neutral-color-1);
         }
       }
-    }
-
-    + .card__content {
-      margin-top: var(--content-gap);
     }
   }
 
@@ -82,16 +83,11 @@
     --v-spacing: #{toRem(30px)};
   }
 
-  @include media-breakpoint(lg) {
-    --content-min-height: #{toRem(318px)};
-  }
-
   @include media-breakpoint(xl) {
     --h-spacing: #{toRem(48px)};
     --v-spacing: #{toRem(52px)};
     --content-spacing: #{toRem(60px)};
     --content-gap: #{toRem(30px)};
-    --content-min-height: #{toRem(336px)};
     --text-font-size: #{toRem(22px)};
     --text-line-height: 1.5;
     --title-font-size-sm: #{toRem(36px)};
@@ -100,7 +96,6 @@
 
   @include media-breakpoint(xxl) {
     --content-spacing: #{toRem(165px)};
-    --content-min-height: #{toRem(439px)};
     --title-font-size: #{toRem(60px)};
   }
 }
