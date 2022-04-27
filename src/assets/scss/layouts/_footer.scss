@@ -99,5 +99,25 @@
     --text-size: #{toRem(18px)};
     --vertical-spacing: #{toRem(80px)};
     --inter-spacing: 0;
+
+    &__text {
+      padding-left: toRem(16px);
+    }
+
+    &__social {
+      &-item {
+        &:not(:last-child) {
+          margin-right: toRem(20px);
+        }
+      }
+  
+      &-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--social-icon-width);
+        height: var(--social-icon-height);
+      }
+    }
   }
 }

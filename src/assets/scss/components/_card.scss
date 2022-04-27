@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
 
     img {
       width: 100%;
@@ -95,7 +95,7 @@
   }
 
   @include media-breakpoint(xxl) {
-    --content-spacing: #{toRem(165px)};
+    --content-spacing: #{toRem(130px)};
     --title-font-size: #{toRem(60px)};
   }
 }
