@@ -1,20 +1,11 @@
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import { getDOMElement } from './utilities';
 
 export default function animateHero() {
-  gsap.registerPlugin(ScrollTrigger);
-
   const homePageElem = getDOMElement('page-home');
 
-  // .hero__title
-  // .hero__tag-line
-  // .hero__cta
-
   if (homePageElem) {
-    console.log('animateHero called...');
-
     const heroTimeline = gsap.timeline({
       defaults: {
         ease: 'power4.inOut',

@@ -1,5 +1,5 @@
 import { getDOMElement, generateCopyright } from './assets/js/utilities';
-import { animateHero, renderLocation } from './assets/js/index';
+import { animateHero, animateContent, renderLocation } from './assets/js/index';
 
 document.addEventListener('DOMContentLoaded', () => {
   const copyrightElem = getDOMElement('copyright');
@@ -7,5 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   generateCopyright(copyrightElem);
 
   animateHero();
+  animateContent();
   renderLocation('map', 41.4855535, -71.3082539, 16);
 });
