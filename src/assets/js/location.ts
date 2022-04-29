@@ -1,7 +1,15 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
+import { getDOMElement } from './utilities';
+
 export default function renderLocation(elem: string, lat: number, long: number, zoom: number) {
+  const mapElem = getDOMElement(elem);
+
+  if (!mapElem) {
+    return;
+  }
+  
   const map = L.map(elem, { zoomControl: false }).setView([lat, long], zoom);
   const markerIcon = L.icon({
     iconUrl: 'assets/images/shared/icon-marker.svg',
