@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   generateCopyright(copyrightElem);
 
-  // animateHero();
-  // animateContent();
+  animateHero();
+  animateContent();
   renderLocation('map', 41.4855535, -71.3082539, 16);
 });
