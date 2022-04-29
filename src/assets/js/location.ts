@@ -19,12 +19,12 @@ export default function renderLocation(elem: string, lat: number, long: number, 
   
   L.marker([lat, long], { icon: markerIcon }).addTo(map);
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={access.token}', {
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY2hyaXN0b3BoZXItYWRvbHBoZSIsImEiOiJjbDJlNzEzdWUwN21yM2lyd3NqNjVnNHh1In0.O8bormbidBxRHDDbJGRCcg', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 20,
     id: 'mapbox/light-v10',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'access.token'
+    accessToken: 'pk.eyJ1IjoiY2hyaXN0b3BoZXItYWRvbHBoZSIsImEiOiJjbDJlNzEzdWUwN21yM2lyd3NqNjVnNHh1In0.O8bormbidBxRHDDbJGRCcg'
   }).addTo(map);
 }
