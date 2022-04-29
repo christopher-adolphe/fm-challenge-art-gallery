@@ -19,7 +19,7 @@
     }
 
     .content-rows {
-      grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(toRem(200px), 1fr));
     }
   }
 

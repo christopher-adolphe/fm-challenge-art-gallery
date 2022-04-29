@@ -9,9 +9,7 @@ export default function animateContent() {
   const mainElem = getDOMElement('main');
 
   if (mainElem) {
-    console.log('animateContent called...');
-
-    const contentTimeline = gsap.timeline({
+    const homeContentTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: '.page__section-about',
         start: 'top 90%',
@@ -24,7 +22,7 @@ export default function animateContent() {
       }
     });
 
-    contentTimeline
+    homeContentTimeline
       .fromTo(
         '#main .grid__item',
         {

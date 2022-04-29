@@ -45,11 +45,6 @@ module.exports = {
       filename: 'design-system.html'
     }),
     new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, 'src/partials/header.html'),
-      location: 'header',
-      template_filename: ['index.html', 'location.html', 'design-system.html']
-    }),
-    new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/footer.html'),
       location: 'footer',
       template_filename: ['index.html', 'location.html', 'design-system.html']
