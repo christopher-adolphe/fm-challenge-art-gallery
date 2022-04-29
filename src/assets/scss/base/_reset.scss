@@ -148,6 +148,7 @@ p {
 
 a {
   color: var(--dark-color-1);
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -156,6 +157,6 @@ ul {
   padding: 0;
 }
 
-.img-fluid {
-  height: auto;
+:focus {
+  outline: var(--gold-color-1) dotted 3px;
 }

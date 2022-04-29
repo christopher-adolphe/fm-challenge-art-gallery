@@ -8,7 +8,7 @@
   }
 
   @each $font, $value in $fonts {
-    --font-family-primary-#{$font}: #{$value};
+    --font-family-primary-#{"" + $font}: #{$value};
   }
 
   @each $zindex, $value in $zindexes {

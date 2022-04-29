@@ -12,7 +12,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/images/[name][ext]',
     clean: true
   },
   module: {
@@ -21,10 +20,6 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         include: [path.resolve(__dirname, 'src')]
-      },
-      {
-        test: /\.(svg|ico|png|webp|gif|jpg|jpeg)$/,
-        type: 'asset/resource'
       }
     ]
   },
@@ -43,11 +38,6 @@ module.exports = {
       title: 'Modern Art Gallery: Design System',
       template: path.resolve(__dirname, 'src/design-system.html'),
       filename: 'design-system.html'
-    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, 'src/partials/header.html'),
-      location: 'header',
-      template_filename: ['index.html', 'location.html', 'design-system.html']
     }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/footer.html'),

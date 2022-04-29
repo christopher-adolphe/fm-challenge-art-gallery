@@ -14,4 +14,8 @@
   &--fluid {
     max-width: 100%;
   }
+
+  @include media-breakpoint(1024px) {
+    padding: 0;
+  }
 }

@@ -1,6 +1,8 @@
 @use '../abstracts/' as *;
 
 .page {
+  --map-height: #{toRem(550px)};
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,9 +10,27 @@
   width: 100%;
   height: 100vh;
 
-  &__header {
-    padding: toRem(24px) 0;
-    background-color: var(--dark-color-5);
+  &__skip-link {
+    position: absolute;
+    top: toRem(20px);
+    left: toRem(20px);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: toRem(26px) toRem(32px);
+    font-family: var(--font-family-primary-black);
+    font-size: toRem(14px);
+    line-height: 1.75;
+    background-color: var(--dark-color-2);
+    color: var(--neutral-color-1);
+    z-index: var(--zindex-sticky);
+    transform: translateX(-200%);
+    transition: transform 0.25s ease-in-out, opacity 0.75s ease-in-out;
+
+    &:focus {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   &__content {
@@ -18,31 +38,15 @@
   }
 
   &__section {
-    padding: toRem(96px) 0;
-
-    &--bg-light-1 {
-      background-color: var(--neutral-color-2);
-    }
-
-    &--bg-light-2 {
-      background-color: var(--neutral-color-3);
-    }
-
-    &--bg-light-1,
-    &--bg-light-2 {
-      p {
-        color: var(--dark-color-4);
-      }
-    }
+    padding: toRem(60px) 0;
   }
 
-  &__footer {
-    padding: toRem(20px) 0;
-    background-color: var(--dark-color-5);
+  &__map {
+    width: 100%;
+    height: var(--map-height);
+  }
 
-    p {
-      color: var(--neutral-color-1);
-      font-size: toRem(14px);
-    }
+  @include media-breakpoint(md) {
+    --map-height: #{toRem(600px)};
   }
 }

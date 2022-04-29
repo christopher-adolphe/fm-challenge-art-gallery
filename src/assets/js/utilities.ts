@@ -4,13 +4,18 @@ export const getDOMElement = (id: string): HTMLElement | null => {
 
 export const generateCopyright = (elem: HTMLElement | null) => {
   const year = new Date().getFullYear();
-  const copyrightText = `© ${year}. Created by Christopher Adolphe`;
+  const copyrightContent = `<p class="footer__copyright-text">© ${year}</p>`;
 
   if (!elem) {
     return;
   }
 
-  elem.textContent = copyrightText;
+  const copyrightElem: HTMLElement | null = elem.querySelector('.footer__copyright-text');
+
+  if (copyrightElem) {
+    copyrightElem.innerHTML = copyrightContent;
+  }
+
 };
 
 const Utilities = {

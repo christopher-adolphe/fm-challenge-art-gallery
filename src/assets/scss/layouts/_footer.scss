@@ -1,0 +1,123 @@
+@use '../abstracts/' as *;
+
+.footer {
+  --brand-width: #{toRem(110px)};
+  --brand-height: #{toRem(40px)};
+  --text-size: #{toRem(16px)};
+  --text-line-height: 1.6;
+  --social-icon-width: #{toRem(20px)};
+  --social-icon-height: #{toRem(20px)};
+  --vertical-spacing: #{toRem(48px)};
+  --inter-spacing: #{toRem(18px)};
+
+  padding: var(--vertical-spacing) 0;
+  background-color: var(--dark-color-2);
+
+  &__brand {
+    display: inline-block;
+    margin-bottom: var(--inter-spacing);
+
+    svg {
+      width: var(--brand-width);
+      height: var(--brand-height);
+    }
+  }
+
+  &__text {
+    margin-bottom: var(--inter-spacing);
+    color: var(--neutral-color-1);
+    font-size: var(--text-size);
+    line-height: var(--text-line-height);
+  }
+
+  &__social {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    svg {
+      width: var(--social-icon-width);
+      height: var(--social-icon-height);
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: toRem(5px);
+      }
+    }
+
+    &-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: calc(var(--social-icon-width) * 2);
+      height: calc(var(--social-icon-height) * 2);
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: toRem(20px);
+    padding-top: toRem(20px);
+    border-top: 1px solid var(--dark-color-1);
+
+    &-brand {
+      width: toRem(32px);
+      height: toRem(32px);
+      margin: 0 toRem(12px)
+    }
+
+    &-text {
+      color: var(--neutral-color-1);
+      font-size: toRem(12px);
+      line-height: 1.3;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: var(--neutral-color-1);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --vertical-spacing: #{toRem(56px)};
+
+    &__social {
+      justify-content: flex-end;
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    --brand-width: #{toRem(160px)};
+    --brand-height: #{toRem(60px)};
+    --text-size: #{toRem(18px)};
+    --vertical-spacing: #{toRem(80px)};
+    --inter-spacing: 0;
+
+    &__text {
+      padding-left: toRem(16px);
+    }
+
+    &__social {
+      &-item {
+        &:not(:last-child) {
+          margin-right: toRem(20px);
+        }
+      }
+  
+      &-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--social-icon-width);
+        height: var(--social-icon-height);
+      }
+    }
+  }
+}

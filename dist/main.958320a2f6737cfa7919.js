@@ -1,1 +1,0 @@
-(()=>{"use strict";(()=>{const t=t=>document.getElementById(t),e=t=>{const e=`© ${(new Date).getFullYear()}. Created by Christopher Adolphe`;t&&(t.textContent=e)};document.addEventListener("DOMContentLoaded",(()=>{const n=t("copyright");e(n)}))})()})();

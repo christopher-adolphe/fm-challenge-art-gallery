@@ -1,0 +1,101 @@
+@use '../abstracts/' as *;
+
+.card {
+  --h-spacing: #{toRem(24px)};
+  --v-spacing: #{toRem(48px)};
+  --content-spacing: 0;
+  --content-gap: #{toRem(20px)};
+  --content-min-height: #{toRem(295px)};
+  --text-font-size: #{toRem(18px)};
+  --text-line-height: 1.6;
+  --title-margin-bottom: #{toRem(24px)};
+  --title-font-size: #{toRem(50px)};
+  --title-font-size-sm: #{toRem(32px)};
+  --title-line-height: 1;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: var(--content-gap);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    img {
+      width: 100%;
+    }
+
+    &--bg-dark {
+      flex-grow: 1;
+      min-height: var(--content-min-height);
+      background-color: var(--dark-color-2);
+      padding: var(--v-spacing) var(--h-spacing);
+
+      .card {
+        &__title,
+        &__text {
+          color: var(--neutral-color-1);
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--title-margin-bottom);
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+
+    &--sm {
+      font-size: var(--title-font-size-sm);
+    }
+  }
+
+  &__text {
+    color: var(--dark-color-1);
+    font-size: var(--text-font-size);
+    line-height: var(--text-line-height);
+  }
+
+  &--space-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .card {
+      &__content {
+        padding-right: var(--content-spacing);
+      }
+    }
+  }
+
+  @include media-breakpoint(md) {
+    --h-spacing: #{toRem(28px)};
+    --v-spacing: #{toRem(69px)};
+    --content-spacing: #{toRem(36px) toRem(40px) 0 0};
+  }
+
+  @include media-breakpoint(800px) {
+    --v-spacing: #{toRem(30px)};
+  }
+
+  @include media-breakpoint(xl) {
+    --h-spacing: #{toRem(48px)};
+    --v-spacing: #{toRem(52px)};
+    --content-spacing: #{toRem(60px)};
+    --content-gap: #{toRem(30px)};
+    --text-font-size: #{toRem(22px)};
+    --text-line-height: 1.5;
+    --title-font-size-sm: #{toRem(36px)};
+    --title-margin-bottom: #{toRem(32px)};
+  }
+
+  @include media-breakpoint(xxl) {
+    --content-spacing: #{toRem(130px)};
+    --title-font-size: #{toRem(60px)};
+  }
+}

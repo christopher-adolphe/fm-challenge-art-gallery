@@ -1,0 +1,54 @@
+@use '../abstracts/' as *;
+
+.page--home {
+  --v-spacing: #{toRem(120px)};
+
+  .page__section {
+    &-about {
+      padding: var(--v-spacing) 0;
+
+      .card {
+        picture {
+          width: 100%;
+        }
+        
+        &--bg-dark {
+          min-height: toRem(295px);
+        }
+      }
+    }
+
+    .content-rows {
+      grid-template-rows: repeat(auto-fit, minmax(toRem(200px), 1fr));
+    }
+  }
+
+  @include media-breakpoint(800px) {
+
+    .page__section {
+      .grid__item {
+        &:nth-child(1) {
+          img {
+            min-height: toRem(275px);
+          }
+        }
+  
+        &:nth-child(3) {
+          img {
+            min-height: toRem(511px);
+          }
+        }
+      }
+    }
+  }
+  
+  @include media-breakpoint(xl) {
+    --v-spacing: #{toRem(180px)};
+
+    .page__section {
+      &-hero {
+        background: linear-gradient(to right, var(--dark-color-2) 50%, var(--neutral-color-1) 50%);
+      }
+    }
+  }
+}
