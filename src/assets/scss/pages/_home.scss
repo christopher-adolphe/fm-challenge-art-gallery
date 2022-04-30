@@ -4,6 +4,10 @@
   --v-spacing: #{toRem(120px)};
 
   .page__section {
+    &-hero {
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    }
+
     &-about {
       padding: var(--v-spacing) 0;
 

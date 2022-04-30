@@ -4,7 +4,7 @@ export const getDOMElement = (id: string): HTMLElement | null => {
 
 export const generateCopyright = (elem: HTMLElement | null) => {
   const year = new Date().getFullYear();
-  const copyrightContent = `<p class="footer__copyright-text">© ${year}</p>`;
+  const copyrightContent = `© ${year}`;
 
   if (!elem) {
     return;

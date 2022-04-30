@@ -28,7 +28,11 @@ Users should be able to:
 
 #### Home page
 
-![Preview for the Art gallery home page](./preview.jpg)
+![Preview for the Art gallery home page](./screenshot-home.jpg)
+
+#### Location page
+
+![Preview for the Art gallery location page](./screenshot-location.png)
 
 ### Links
 
