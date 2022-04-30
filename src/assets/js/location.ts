@@ -6,6 +6,8 @@ import { getDOMElement } from './utilities';
 export default function renderLocation(elem: string, lat: number, long: number, zoom: number) {
   const ACCESS_TOKEN = process.env.MAPBOX_TOKEN || '';
 
+  console.log('renderLocation - ACCESS_TOKEN: ', process.env.MAPBOX_TOKEN);
+
   const mapElem = getDOMElement(elem);
 
   if (!mapElem) {
