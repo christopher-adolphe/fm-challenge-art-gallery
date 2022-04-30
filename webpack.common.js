@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const DotEnvPlugin = require('dotenv-webpack');
 
 module.exports = {
   entry: [
@@ -46,6 +47,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash].css'
+    }),
+    new DotEnvPlugin({
+      systemvars: true
     })
   ],
   resolve: {
