@@ -28,7 +28,7 @@ Users should be able to:
 
 #### Home page
 
-![Preview for the Art gallery home page](./screenshot-home.jpg)
+![Preview for the Art gallery home page](./screenshot-home.png)
 
 #### Location page
 
