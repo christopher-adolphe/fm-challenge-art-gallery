@@ -7,8 +7,9 @@ export default function animateContent() {
   gsap.registerPlugin(ScrollTrigger);
 
   const mainElem = getDOMElement('main');
+  const pageHomeElem = getDOMElement('page-home');
 
-  if (mainElem) {
+  if (mainElem && pageHomeElem) {
     const homeContentTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: '.page__section-about',

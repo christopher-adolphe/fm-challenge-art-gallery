@@ -53,6 +53,38 @@ module.exports = merge(common, {
             to: 'assets/images/[name][ext]'
           },
           {
+            from: 'src/assets/images/home/desktop/*',
+            to: 'assets/images/home/desktop/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/home/mobile/*',
+            to: 'assets/images/home/mobile/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/home/tablet/*',
+            to: 'assets/images/home/tablet/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/location/*',
+            to: 'assets/images/location/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/location/desktop/*',
+            to: 'assets/images/location/desktop/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/location/mobile/*',
+            to: 'assets/images/location/mobile/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/location/tablet/*',
+            to: 'assets/images/location/tablet/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/shared/*',
+            to: 'assets/images/shared/[name][ext]'
+          },
+          {
             from: 'src/assets/fonts/*',
             to: 'assets/fonts/[name][ext]'
           }

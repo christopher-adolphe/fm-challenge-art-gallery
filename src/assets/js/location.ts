@@ -3,12 +3,20 @@ import 'leaflet/dist/leaflet.css';
 
 import { getDOMElement } from './utilities';
 
-export default function renderLocation(elem: string, lat: number, long: number, zoom: number) {
+export default function renderLocation(elem: string, fallbackElem: string, lat: number, long: number, zoom: number) {
   const ACCESS_TOKEN = process.env.MAPBOX_TOKEN || '';
 
   const mapElem = getDOMElement(elem);
+  const mapFallbackElem = getDOMElement(fallbackElem);
 
-  if (!mapElem) {
+  if (!mapElem || !mapFallbackElem) {
+    return;
+  }
+
+  if (!ACCESS_TOKEN.length) {
+    mapElem.classList.add('page__map--is-hidden');
+    mapFallbackElem.classList.remove('page__map-fallback--is-hidden');
+
     return;
   }
   

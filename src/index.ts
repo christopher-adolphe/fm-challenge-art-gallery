@@ -8,5 +8,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animateHero();
   animateContent();
-  renderLocation('map', 41.4855535, -71.3082539, 16);
+  renderLocation('map', 'map-fallback', 41.4797241, -71.3115167, 16);
 });
