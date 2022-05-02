@@ -41,9 +41,20 @@
     padding: toRem(60px) 0;
   }
 
-  &__map {
+  &__map,
+  &__map-fallback {
     width: 100%;
     height: var(--map-height);
+
+    &--is-hidden {
+      display: none;
+    }
+  }
+
+  &__map-fallback {
+    img {
+      width: 100%;
+    }
   }
 
   @include media-breakpoint(md) {
