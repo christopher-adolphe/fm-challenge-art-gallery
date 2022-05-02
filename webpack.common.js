@@ -13,7 +13,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/images/[name][ext]',
     clean: true
   },
   module: {
@@ -22,10 +21,6 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         include: [path.resolve(__dirname, 'src')]
-      },
-      {
-        test: /\.(svg|ico|png|webp|gif|jpg|jpeg)$/,
-        type: 'asset/resource'
       }
     ]
   },
