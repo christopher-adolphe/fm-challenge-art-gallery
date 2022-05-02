@@ -44,20 +44,36 @@
   &__map,
   &__map-fallback {
     width: 100%;
-    height: var(--map-height);
 
     &--is-hidden {
       display: none;
     }
   }
 
+  &__map {
+    height: var(--map-height);
+  }
+
   &__map-fallback {
+    picture {
+      height: var(--map-height);
+    }
+
     img {
       width: 100%;
+      height: 100%;
     }
   }
 
   @include media-breakpoint(md) {
     --map-height: #{toRem(600px)};
+  }
+
+  @include media-breakpoint(lg) {
+    &__map-fallback {
+      img {
+        height: unset;
+      }
+    }
   }
 }
