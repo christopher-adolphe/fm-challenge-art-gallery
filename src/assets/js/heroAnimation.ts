@@ -32,7 +32,7 @@ export default function animateHero() {
           opacity: 0.75
         },
         {
-          clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+          clipPath: 'polygon(-60% 0%, 100% 0%, 100% 100%, -60% 100%)',
           x: '0%',
           opacity: 1
         },

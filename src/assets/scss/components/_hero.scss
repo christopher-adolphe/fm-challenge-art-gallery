@@ -63,13 +63,13 @@
     }
   }
 
-  @include media-breakpoint(800px) {
+  @media (min-width: 800px) and (max-width: 991px) {
     picture {
       transform: translateX(toRem(-80px));
     }
 
     &__content {
-      transform: translateX(toRem(-150px));
+      transform: translateX(toRem(-130px));
     }
   }
 
